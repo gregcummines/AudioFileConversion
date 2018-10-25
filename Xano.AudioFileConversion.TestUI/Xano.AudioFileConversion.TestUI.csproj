@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xano.AudioFileConversion\Xano.AudioFileConversion.csproj">
+      <Project>{42c1f73d-523a-41d9-9b9c-c7436efce3b2}</Project>
+      <Name>Xano.AudioFileConversion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
