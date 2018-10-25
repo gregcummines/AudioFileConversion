@@ -37,6 +37,22 @@ namespace Xano.AudioFileConversion.TestUI
                 MessageBox.Show("Output directory does not exist", "Audio File Conversion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            var files = Directory.GetFiles(txtInputDirectory.Text);
+            int filesProcessed = 0;
+            foreach(var file in files)
+            {
+                var extension = Path.GetExtension(file);
+                if (extension.ToUpper() == ".WAV")
+                {
+                    var fileNameNoExt = Path.GetFileNameWithoutExtension(file);
+                    var newFilePath = Path.Combine(txtOutputDirectory.Text, fileNameNoExt + "_10KHz.wav");
+                    WaveResampler.Resample(file, newFilePath, Convert.ToInt32(txtSampleRate.Text));
+                    filesProcessed++;
+                }
+            }
+
+            MessageBox.Show($"{filesProcessed} files were converted!", "Audio File Conversion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnInputDirectory_Click(object sender, EventArgs e)
@@ -61,6 +77,24 @@ namespace Xano.AudioFileConversion.TestUI
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     txtOutputDirectory.Text = fbd.SelectedPath;
+                }
+            }
+        }
+
+        private void btnReadSampleRate_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                string file = openFileDialog1.FileName;
+                try
+                {
+                    int sampleRate = WaveResampler.GetSampleRate(file);
+                    MessageBox.Show($"Sample rate is {sampleRate}");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error: {exception.ToString()}", "Audio File Conversion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

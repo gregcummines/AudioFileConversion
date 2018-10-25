@@ -33,6 +33,10 @@
             this.btnInputDirectory = new System.Windows.Forms.Button();
             this.btnOutputDirectory = new System.Windows.Forms.Button();
             this.btnStartConversion = new System.Windows.Forms.Button();
+            this.txtSampleRate = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReadSampleRate = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // txtInputDirectory
@@ -80,11 +84,45 @@
             this.btnStartConversion.UseVisualStyleBackColor = false;
             this.btnStartConversion.Click += new System.EventHandler(this.btnStartConversion_Click);
             // 
+            // txtSampleRate
+            // 
+            this.txtSampleRate.Location = new System.Drawing.Point(103, 114);
+            this.txtSampleRate.Name = "txtSampleRate";
+            this.txtSampleRate.Size = new System.Drawing.Size(73, 20);
+            this.txtSampleRate.TabIndex = 5;
+            this.txtSampleRate.Text = "10000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Sample Rate";
+            // 
+            // btnReadSampleRate
+            // 
+            this.btnReadSampleRate.Location = new System.Drawing.Point(456, 111);
+            this.btnReadSampleRate.Name = "btnReadSampleRate";
+            this.btnReadSampleRate.Size = new System.Drawing.Size(109, 23);
+            this.btnReadSampleRate.TabIndex = 7;
+            this.btnReadSampleRate.Text = "Read Sample Rate";
+            this.btnReadSampleRate.UseVisualStyleBackColor = true;
+            this.btnReadSampleRate.Click += new System.EventHandler(this.btnReadSampleRate_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 271);
+            this.Controls.Add(this.btnReadSampleRate);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSampleRate);
             this.Controls.Add(this.btnStartConversion);
             this.Controls.Add(this.btnOutputDirectory);
             this.Controls.Add(this.btnInputDirectory);
@@ -106,6 +144,10 @@
         private System.Windows.Forms.Button btnInputDirectory;
         private System.Windows.Forms.Button btnOutputDirectory;
         private System.Windows.Forms.Button btnStartConversion;
+        private System.Windows.Forms.TextBox txtSampleRate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReadSampleRate;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

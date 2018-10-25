@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Xano.AudioFileConversion
 {
-    public class WaveResampler
+    public static class WaveResampler
     {
-        private static int GetSampleRate(string filePathInput)
+        public static int GetSampleRate(string filePathInput)
         {
             var sampleRate = 0;
             
@@ -37,7 +37,7 @@ namespace Xano.AudioFileConversion
             return sampleRate;
         }
 
-        private static void Resample(string filePathInput, string filePathOutput, int resampleSize)
+        public static void Resample(string filePathInput, string filePathOutput, int resampleSize)
         {
             if (filePathInput == filePathOutput)
                 throw new ArgumentException("Input and Output file paths cannot be the same.");
