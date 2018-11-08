@@ -16,11 +16,19 @@ namespace Xano.AudioFileConversion
             var waveFileHeader = new byte[0];
 
             var fileNameNoExt = Path.GetFileNameWithoutExtension(inputFilePath);
-            var newFilePath = Path.Combine(outputFolder, fileNameNoExt + "_simluated.wav");
+
+            var resampledFilePath = Path.Combine(outputFolder, fileNameNoExt + "_resampled.wav");
+            var simulatedFilePath = Path.Combine(outputFolder, fileNameNoExt + "_simluated.wav");
             var edfFilePath = Path.Combine(outputFolder, fileNameNoExt + ".edf");
             using (var outputStream = new MemoryStream())
             {
                 WaveResampler.Resample(inputFilePath, outputStream, sampleRate);
+
+                var fileStream = File.Create(resampledFilePath);
+                outputStream.Seek(0, SeekOrigin.Begin);
+                outputStream.CopyTo(fileStream);
+                fileStream.Close();
+
                 outputStream.Position = 0;
                 (sampleRate, waveFileHeader, waveFileData) = WaveResampler.ReadStream(outputStream);
                 
@@ -29,7 +37,7 @@ namespace Xano.AudioFileConversion
                 File.WriteAllText(edfFilePath, string.Join("", firmwarePhraseData));
 
                 WaveFormat waveFormat = new WaveFormat(20000, 1);
-                using (WaveFileWriter writer = new WaveFileWriter(newFilePath, waveFormat))
+                using (WaveFileWriter writer = new WaveFileWriter(simulatedFilePath, waveFormat))
                 {
                     float[] floatArray = Array.ConvertAll(simulatedData, x => (float)x);
                     writer.WriteSamples(floatArray, 0, floatArray.Length);
