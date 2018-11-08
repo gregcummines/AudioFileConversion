@@ -45,6 +45,7 @@
             this.txtInputDirectory.Name = "txtInputDirectory";
             this.txtInputDirectory.Size = new System.Drawing.Size(441, 20);
             this.txtInputDirectory.TabIndex = 0;
+            this.txtInputDirectory.Text = "F:\\temp\\G721_MATLAB_VOI_0.1.0\\sample_in";
             // 
             // txtOutputDirectory
             // 
@@ -52,6 +53,7 @@
             this.txtOutputDirectory.Name = "txtOutputDirectory";
             this.txtOutputDirectory.Size = new System.Drawing.Size(441, 20);
             this.txtOutputDirectory.TabIndex = 1;
+            this.txtOutputDirectory.Text = "F:\\temp\\G721_MATLAB_VOI_0.1.0\\sample_out";
             // 
             // btnInputDirectory
             // 

@@ -45,9 +45,7 @@ namespace Xano.AudioFileConversion.TestUI
                 var extension = Path.GetExtension(file);
                 if (extension.ToUpper() == ".WAV")
                 {
-                    var fileNameNoExt = Path.GetFileNameWithoutExtension(file);
-                    var newFilePath = Path.Combine(txtOutputDirectory.Text, fileNameNoExt + "_10KHz.wav");
-                    WaveResampler.Resample(file, newFilePath, Convert.ToInt32(txtSampleRate.Text));
+                    VoicePhraseProcessor.ProcessWaveFile(file, txtOutputDirectory.Text, Convert.ToInt32(txtSampleRate.Text));
                     filesProcessed++;
                 }
             }
