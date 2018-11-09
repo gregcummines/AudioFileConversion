@@ -59,5 +59,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NWaves\NWaves.csproj">
+      <Project>{3fbf1b3a-3bed-4f2f-8008-871acf83e352}</Project>
+      <Name>NWaves</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

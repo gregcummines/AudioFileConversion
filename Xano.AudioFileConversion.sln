@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xano.AudioFileConversion", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xano.AudioFileConversion.TestUI", "Xano.AudioFileConversion.TestUI\Xano.AudioFileConversion.TestUI.csproj", "{F67ADDBD-EF79-46B6-9D3C-A8C26E7C44B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWaves", "NWaves\NWaves.csproj", "{3FBF1B3A-3BED-4F2F-8008-871ACF83E352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F67ADDBD-EF79-46B6-9D3C-A8C26E7C44B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F67ADDBD-EF79-46B6-9D3C-A8C26E7C44B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F67ADDBD-EF79-46B6-9D3C-A8C26E7C44B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBF1B3A-3BED-4F2F-8008-871ACF83E352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBF1B3A-3BED-4F2F-8008-871ACF83E352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBF1B3A-3BED-4F2F-8008-871ACF83E352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBF1B3A-3BED-4F2F-8008-871ACF83E352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
